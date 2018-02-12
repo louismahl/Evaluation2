@@ -54,6 +54,17 @@ namespace Evaluation2
             set { m_vegan = value; }
         }
 
-
+        override
+        public String ToString()
+        {
+            String tmp = "";
+            tmp += "Name: " + name + " ";
+            tmp += "|Course: " + course + " ";
+            tmp += "|Calories: " + calories + " cal ";
+            tmp += "|Price: " + price + "e ";
+            if (vegan) tmp += "|this dish is vegan.";
+            else tmp += "|this dish is not vegan.";
+            return tmp;
+        }
     }
 }

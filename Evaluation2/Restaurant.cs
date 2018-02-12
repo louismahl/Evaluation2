@@ -39,12 +39,7 @@ namespace Evaluation2
             String tmp = "";
             foreach (Dish a in menu)
             {
-                tmp += "Name: " + a.name + " ";
-                tmp += "|Course: " + a.course + " ";
-                tmp += "|Calories: " + a.calories + " cal ";
-                tmp += "|Price: " + a.price + "e ";
-                if (a.vegan) tmp += "|this dish is vegan.";
-                else tmp += "|this dish is not vegan.";
+                tmp += a.ToString();
                 tmp += "\n";
             }
             return tmp;
