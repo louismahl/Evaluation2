@@ -6,7 +6,54 @@ using System.Threading.Tasks;
 
 namespace Evaluation2
 {
+    enum Course { DESSERT, MAIN, STARTER };
+
     class Dish
     {
+        private String m_name = " ";
+        private bool m_vegan;
+        private Course m_course;
+        private int m_calories;
+        private int m_price;
+
+        //Name
+        //non-empty
+        public String name
+        {
+            get { return m_name; }
+            set { m_name = value;  }
+        }
+
+        //Course
+        public Course course
+        {
+            get { return m_course; }
+            set { m_course = value; }
+        }
+
+        //Calories
+        //Positif => faire qqch ou pas ?
+        public int calories
+        {
+            get { return m_calories; }
+            set { m_calories = value;  }
+        }
+
+        //Price
+        //Positif => faire qqch ou pas ?
+        public int price
+        {
+            get { return m_price; }
+            set { m_price = value; }
+        }
+
+        //Vegan
+        public bool vegan
+        {
+            get { return m_vegan; }
+            set { m_vegan = value; }
+        }
+
+
     }
 }
