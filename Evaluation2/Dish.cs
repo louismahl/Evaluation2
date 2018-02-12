@@ -10,6 +10,7 @@ namespace Evaluation2
 
     public class Dish
     {
+
         private String m_name = " ";
         private bool m_vegan;
         private Course m_course;
@@ -53,6 +54,19 @@ namespace Evaluation2
             get { return m_vegan; }
             set { m_vegan = value; }
         }
+
+
+        //Constructeur
+        public Dish(String nom, Course type, int cal, int prix, bool veg)
+        {
+            name = nom;
+            course = type;
+            calories = cal;
+            price = prix;
+            vegan = veg;
+        }
+
+
 
         override
         public String ToString()
