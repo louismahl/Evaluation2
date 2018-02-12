@@ -12,6 +12,7 @@ namespace Evaluation2
     {
         // Attributes
         private List<Dish> m_menu;
+        private fillMenu m_leChef;
 
         // Getters and setters
         public List<Dish> menu
@@ -19,6 +20,17 @@ namespace Evaluation2
             get { return m_menu; }
             set { m_menu = value; }
         }
+
+        public struct meal
+        {
+            int energy;
+            int bill;
+        }
+
+        public Restaurant(fillMenu chef)
+        {
+            m_leChef = chef;
+        } 
 
         // Implement IRestaurant methods
         public void Open()
