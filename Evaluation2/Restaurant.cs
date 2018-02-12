@@ -23,8 +23,8 @@ namespace Evaluation2
 
         public struct meal
         {
-            int energy;
-            int bill;
+            public int energy;
+            public int bill;
         }
 
         public Restaurant(Program.fillMenu chef)
@@ -35,13 +35,7 @@ namespace Evaluation2
         // Implement IRestaurant methods
         public void Open()
         {
-            List<Dish> b = new List<Dish>();
-            XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
-            using (StreamReader rd = new StreamReader("myMenu.xml"))
-            {
-                b = xd.Deserialize(rd) as List<Dish>;
-            }
-            this.menu = b;
+            menu = m_leChef();
         }
         
         // Overriding ToString to show the menu
@@ -60,7 +54,20 @@ namespace Evaluation2
         // Overriding Welcome to say coucou au customer
         public void Welcome(Customer customer)
         {
-            Console.WriteLine("Bienvenue " + customer.name + " !");
+            Console.WriteLine("Welcome " + customer.name + " !");
+            meal m = new meal();
+            m.energy = 0;
+            m.bill = 0;
+            foreach(Dish d in menu)
+            {
+                if (customer.m_preferences(d))
+                {
+                    Console.WriteLine("You ordered " + d.name);
+                    m.bill += d.price;
+                    m.energy += d.calories;
+                }
+            }
+            Console.WriteLine("You ate " + m.energy + " calories and payed " + m.bill + " euros !");
         }
     }
 }

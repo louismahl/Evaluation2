@@ -30,8 +30,19 @@ namespace Evaluation2
             return Menu;
         }
 
-        public bool rich(Dish d){
-            if(d.name == "Salad" || d.name == "Apple") {
+        public bool rich(Dish d)
+        {
+            if (d.name == "Salad" || d.name == "Apple")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool fat(Dish d)
+        {
+            if (d.name == "Burger" || d.name == "ChocMousse")
+            {
                 return true;
             }
             return false;
@@ -39,16 +50,17 @@ namespace Evaluation2
 
         void work()
         {
-            fillMenu fastf = new fillMenu(FastFood);
-
-            selectDish gastronomie = new selectDish(rich);
-
             IRestaurant FastnFat = new Restaurant(new fillMenu(FastFood));
             FastnFat.Open();
             Console.WriteLine(FastnFat.ToString());
 
+            // Rich guy
             Customer Jack = new Customer("Jack", new selectDish(rich));
             FastnFat.Welcome(Jack);
+
+            // Fat guy
+            Customer Paul = new Customer("Paul", new selectDish(fat));
+            FastnFat.Welcome(Paul);
 
             //Customer Tao = new Customer("Tao", new selectDish(ascetic));
             //FastnFat.Welcome(Tao);

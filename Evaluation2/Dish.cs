@@ -57,6 +57,7 @@ namespace Evaluation2
 
 
         //Constructeur
+        public Dish() { }
         public Dish(String nom, Course type, int cal, int prix, bool veg)
         {
             name = nom;

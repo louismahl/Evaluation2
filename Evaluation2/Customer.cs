@@ -10,7 +10,7 @@ namespace Evaluation2
     {
 
         private String m_name;
-        private Program.selectDish m_preferences;
+        public Program.selectDish m_preferences;
 
         public String name
         {
