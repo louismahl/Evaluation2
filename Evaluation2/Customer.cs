@@ -10,10 +10,18 @@ namespace Evaluation2
     {
 
         private String m_name;
+        private Program.selectDish m_preferences;
+
         public String name
         {
             get { return m_name; }
             set { m_name = value; }
+        }
+
+        public Customer(String nom, Program.selectDish preferences)
+        {
+            name = nom;
+            m_preferences = preferences;
         }
 
     }
