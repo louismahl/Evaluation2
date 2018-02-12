@@ -9,5 +9,9 @@ namespace Evaluation2
     interface IRestaurant
     {
         void Open();
+
+
+        void Welcome(Customer customer);
+        
     }
 }

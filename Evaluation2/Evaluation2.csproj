@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
     <Compile Include="Dish.cs" />
     <Compile Include="IRestaurant.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -54,16 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\Evaluation2.exe.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\Evaluation2.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Release\Evaluation2.csproj.CoreCompileInputs.cache" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Evaluation2.exe" />
+    <Content Include="bin\Debug\Evaluation2.pdb" />
     <Content Include="myMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
-    <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

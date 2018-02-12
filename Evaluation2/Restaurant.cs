@@ -44,5 +44,11 @@ namespace Evaluation2
             }
             return tmp;
         }
+
+        // Overriding Welcome to say coucou au customer
+        public void Welcome(Customer customer)
+        {
+            Console.WriteLine("Bienvenue " + customer.name + " !");
+        }
     }
 }
