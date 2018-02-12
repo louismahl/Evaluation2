@@ -30,8 +30,19 @@ namespace Evaluation2
             return Menu;
         }
 
+        public bool rich(Dish d){
+            if(d.name == "Salad" || d.name == "Apple") {
+                return true;
+            }
+            return false;
+        }
+
         void work()
         {
+            fillMenu fastf = new fillMenu(FastFood);
+
+            selectDish gastronomie = new selectDish(rich);
+
             IRestaurant FastnFat = new Restaurant(new fillMenu(FastFood));
             FastnFat.Open();
             Console.WriteLine(FastnFat.ToString());
@@ -39,8 +50,8 @@ namespace Evaluation2
             Customer Jack = new Customer("Jack", new selectDish(rich));
             FastnFat.Welcome(Jack);
 
-            Customer Tao = new Customer("Tao", new selectDish(ascetic));
-            FastnFat.Welcome(Tao);
+            //Customer Tao = new Customer("Tao", new selectDish(ascetic));
+            //FastnFat.Welcome(Tao);
 
             Console.ReadLine();
         }
