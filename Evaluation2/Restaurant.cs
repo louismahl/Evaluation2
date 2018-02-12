@@ -12,7 +12,7 @@ namespace Evaluation2
     {
         // Attributes
         private List<Dish> m_menu;
-        private fillMenu m_leChef;
+        private Program.fillMenu m_leChef;
 
         // Getters and setters
         public List<Dish> menu
@@ -27,10 +27,10 @@ namespace Evaluation2
             int bill;
         }
 
-        public Restaurant(fillMenu chef)
+        public Restaurant(Program.fillMenu chef)
         {
             m_leChef = chef;
-        } 
+        }
 
         // Implement IRestaurant methods
         public void Open()
