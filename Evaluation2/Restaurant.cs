@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Evaluation2
 {
-    class Restaurant : IRestaurant
+    public class Restaurant : IRestaurant
     {
         // Attributes
         private List<Dish> m_menu;
 
         // Getters and setters
-        private List<Dish> menu
+        public List<Dish> menu
         {
             get { return m_menu; }
             set { m_menu = value; }
@@ -21,7 +23,13 @@ namespace Evaluation2
         // Implement IRestaurant methods
         public void Open()
         {
-            
+            List<Dish> b = new List<Dish>();
+            XmlSerializer xd = new XmlSerializer(typeof(List<Dish>));
+            using (StreamReader rd = new StreamReader("myMenu.xml"))
+            {
+                b = xd.Deserialize(rd) as List<Dish>;
+            }
+            this.menu = b;
         }
         
         // Overriding ToString to show the menu
@@ -31,12 +39,12 @@ namespace Evaluation2
             String tmp = "";
             foreach (Dish a in menu)
             {
-                tmp += a.name + " ";
-                tmp += a.course + " ";
-                tmp += a.calories + " ";
-                tmp += a.price + " ";
-                if (a.vegan) tmp += "this dish is vegan.";
-                else tmp += "this dish is not vegan.";
+                tmp += "Name: " + a.name + " ";
+                tmp += "|Course: " + a.course + " ";
+                tmp += "|Calories: " + a.calories + " cal ";
+                tmp += "|Price: " + a.price + "e ";
+                if (a.vegan) tmp += "|this dish is vegan.";
+                else tmp += "|this dish is not vegan.";
                 tmp += "\n";
             }
             return tmp;

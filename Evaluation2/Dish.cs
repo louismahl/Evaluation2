@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Evaluation2
 {
-    enum Course { DESSERT, MAIN, STARTER };
+    public enum Course { DESSERT, MAIN, STARTER };
 
-    class Dish
+    public class Dish
     {
         private String m_name = " ";
         private bool m_vegan;
