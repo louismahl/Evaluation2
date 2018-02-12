@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfDish xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Dish>
+    <name>Burger</name>
+    <course>MAIN</course>
+    <calories>380</calories>
+    <price>15</price>
+    <vegan>false</vegan>
+  </Dish>
+  <Dish>
+    <name>Salad</name>
+    <course>STARTER</course>
+    <calories>80</calories>
+    <price>8</price>
+    <vegan>true</vegan>
+  </Dish>
+  <Dish>
+    <name>ChocMousse</name>
+    <course>DESSERT</course>
+    <calories>120</calories>
+    <price>5</price>
+    <vegan>false</vegan>
+  </Dish>
+  <Dish>
+    <name>Apple</name>
+    <course>DESSERT</course>
+    <calories>12</calories>
+    <price>2</price>
+    <vegan>true</vegan>
+  </Dish>
+  <Dish>
+    <name>Okonomiaki</name>
+    <course>MAIN</course>
+    <calories>300</calories>
+    <price>16</price>
+    <vegan>true</vegan>
+  </Dish>
+</ArrayOfDish>

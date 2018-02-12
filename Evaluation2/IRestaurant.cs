@@ -8,5 +8,6 @@ namespace Evaluation2
 {
     interface IRestaurant
     {
+
     }
 }
